@@ -1,7 +1,6 @@
-後端部分
-建立資料庫連接與路由
+##後端部分
+**建立資料庫連接與路由
 ```javascript
-複製程式碼
 const express = require('express'); // 引入Express框架
 const router = express.Router(); // 建立一個新的路由器實例
 const mysql = require('mysql'); // 引入MySQL模組
@@ -37,9 +36,8 @@ router.get('/products', (req, res) => {
 
 module.exports = router; // 匯出路由模組
 ```
-在伺服器中使用這個路由
+**在伺服器中使用這個路由
 ```javascript
-複製程式碼
 const express = require('express'); // 引入Express框架
 const app = express(); // 建立一個Express應用程式實例
 const productsRouter = require('./productsRouter'); // 引入剛剛建立的產品路由
@@ -50,10 +48,9 @@ app.listen(3005, () => {
   console.log('Server is running on port 3005'); // 啟動伺服器並監聽3005端口
 });
 ```
-前端部分
-向後端fetch資料並設置KEY值，使用map整理陣列
+##前端部分
+**向後端fetch資料並設置KEY值，使用map整理陣列
 ```javascript
-複製程式碼
 import React, { useState, useEffect } from 'react';
 
 const ProductList = () => {
@@ -82,9 +79,8 @@ const ProductList = () => {
 
 export default ProductList; // 匯出產品列表組件
 ```
-使用Context來保存購物車資料
+**使用Context來保存購物車資料
 ```javascript
-複製程式碼
 import React, { createContext, useContext, useState } from 'react';
 
 // 建立一個新的Context來保存購物車資料
@@ -115,9 +111,8 @@ export const CartProvider = ({ children }) => {
   );
 };
 ```
-結帳時，使用第三方金流（例如LinePay）的createOrder路由
+**結帳時，使用第三方金流（例如LinePay）的createOrder路由
 ```javascript
-複製程式碼
 import React from 'react';
 import { useCart } from './CartContext'; // 引入自定義的useCart鉤子
 
