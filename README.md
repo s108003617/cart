@@ -1,6 +1,6 @@
 後端部分
 建立資料庫連接與路由
-javascript
+```javascript
 複製程式碼
 const express = require('express'); // 引入Express框架
 const router = express.Router(); // 建立一個新的路由器實例
@@ -36,6 +36,7 @@ router.get('/products', (req, res) => {
 });
 
 module.exports = router; // 匯出路由模組
+```
 在伺服器中使用這個路由
 javascript
 複製程式碼
